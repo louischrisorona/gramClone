@@ -2,12 +2,15 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row pt-5">
         <div class="col-3 p-5">
             <img src="https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/s150x150/83213956_3360255157381124_5752385570823208960_n.jpg?_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_ohc=0Dx0kbwZdmIAX_aq5HV&oh=5cff7cfdba64e1723d64afcc8ce78ac0&oe=5EC9FB46" alt="logo" class="rounded-circle">
         </div>
         <div class="col-6 pt-5">
-            <div><h1>{{ $user->username }}</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{ $user->username }}</h1>
+                <a href="#">Add new post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>288</strong> Posts</div>
                 <div class="pr-5"><strong>45.3k</strong> Followers</div>
