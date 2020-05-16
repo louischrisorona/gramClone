@@ -12,16 +12,23 @@
                 <a href="#">Add new post</a>
             </div>
             <div class="d-flex">
-                <div class="pr-5"><strong>288</strong> Posts</div>
+                <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> Posts</div>
                 <div class="pr-5"><strong>45.3k</strong> Followers</div>
                 <div class="pr-5"><strong>240</strong> Following</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>
-            <div><a href="#">{{ $user->profile->url }}</a></div>
+            <div><a href="/p/create">{{ $user->profile->url }}</a></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-5">
+        @foreach($user->posts as $post)
+            <div class="col-4 pb-4">
+                <a href="/p/">
+                    <img src="/storage/{{ $post->image }}" class="w-100">
+                </a>
+            </div>
+        @endforeach
         <div class="col-4">
             <img src="https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-15/e35/c94.0.561.561a/94171296_697817847426178_8140418426111811606_n.jpg?_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_cat=110&_nc_ohc=EpmKpewBE2MAX-0CCnW&oh=49f7525dfe86543876b9fda8cf1774d7&oe=5ECAC0AE" class="w-100">
         </div>
