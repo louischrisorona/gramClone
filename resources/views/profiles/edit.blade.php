@@ -47,7 +47,7 @@
 
                     <input id="url" 
                            type="text"
-                           class="form-control {{ @error('url') is-invalid @enderror }}"
+                           class="form-control {{ @error('url') is-invalid @enderror }}" 
                            name="url"
                            value="{{ old('url') ?? $user->profile->url }}"
                            required autocomplete="url" autofocus>
