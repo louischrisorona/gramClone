@@ -9,9 +9,13 @@
         <div class="col-6 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="#">Add new post</a>
+                @can('update', $user->profile)
+                    <a href="#">Add new post</a>
+                @endcan
             </div>
-            <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+            @can('update', $user->profile)
+                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+            @endcan
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> Posts</div>
                 <div class="pr-5"><strong>45.3k</strong> Followers</div>
